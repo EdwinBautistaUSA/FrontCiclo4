@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Usuarios Tiro de AS</title>
+</head>
+<body onload="getUsers()">
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo right">TIRO DE AS - Modulo de Administración </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="MenuTiroAs.html">Inicio</a></li>
+                <li><a href="Accesorios.html">Accesorios</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+
+    <div class="row">
+        <h4>Registro de Usuarios</h4>
+        <div class="col s4">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">person_pin</i>
+                            <input id="identification" type="text" class="validate">
+                            <label for="identification">Identificación</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">person_add</i>
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Nombres</label>
+                        </div>
+                        <div class="input-field col s6">
+                        </div>
+                        <div class="input-field col s6">
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">gps_fixed</i>
+                            <input id="address" type="text" class="validate">
+                            <label for="address">Dirección</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="cellPhone" type="text" class="validate">
+                            <label for="cellPhone">Telefono</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="text" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">vpn_lock</i>
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">filter_hdr</i>
+                        <input id="zone" type="text" class="validate">
+                        <label for="zone">Zona</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">description</i>
+                        <input id="type" type="text" class="validate">
+                        <label for="type">Tipo Usuario</label>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">person_pin</i>
+                        <input id="id" type="number" class="validate">
+                        <label for="id">Código</label>
+                    </div>
+            </form>
+            <button class="btn-large" onclick="saveUser()" id="open1"> <i class="material-icons right">save</i>Guardar</button>
+        </div>
+
+                <div class="col s8 ">
+                            <table class="highlight centered responsive-table">
+                                <thead>
+                                <tr>
+                                    <th>Usuario ID</th>
+                                    <th>Identificacion</th>
+                                    <th>Nombres</th>
+                                    <th>Dirección</th>
+                                    <th>Telefono</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th>Zona</th>
+                                    <th>Tipo Usuario</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                </thead>
+                                <tbody id="resUsers">
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="js/FuncionesReto1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</body>
+</html>

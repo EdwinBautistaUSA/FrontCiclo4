@@ -1,0 +1,35 @@
+Codigos Maquina virtual cargar Back
+
+sudo apachectl stop
+sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
+sudo firewall-cmd --reload
+Reto 2
+git clone https://github.com/EdwinBautistaUSA/Reto2Ciclo4.git
+reto 1
+git clone https://github.com/EdwinBautistaUSA/Reto1v1.git
+Reto 3
+git clone https://github.com/EdwinBautistaUSA/Reto3Ciclo4.git
+mvn clean package -DskipTests
+java -jar -Dspring.profiles.active=prod reto3-0.0.1-SNAPSHOT.jar 
+
+GIT
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/EdwinBautistaUSA/Front_Motos.git
+git push -u origin main
+
+Comando maquina virtual Front
+
+Instalar Apache
+sudo yum install -y httpd
+sudo systemctl enable httpd
+sudo systemctl restart httpd
+sudo firewall-cmd --add-service=http --permanent
+sudo firewall-cmd --reload
+
+Ingresar en carpetas
+cd /var/www/html
+sudo chmod 777 html
+git clone https://github.com/EdwinBautistaUSA/Front_Motos.git

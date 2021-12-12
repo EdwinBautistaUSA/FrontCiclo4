@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--llamamos a iconos y fonts-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">  
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        
+        <link href="/css/styles.css" rel="stylesheet" type="text/css">
+        <title>Document</title>
+    </head>
+
+  <body >
+    
+    <form class="formulario" id="form" method="POST">
+        <h3>Ingresa tus Datos...</h3>
+        <div class="contenedor">
+
+            <div class="input-contenedor" id="grupo__name">
+                <i class="fas fa-envelope icon"></i>
+                <input type="text" placeholder="Nombres" id="name" name="nombres">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-at icon"></i>
+                <input type="text" placeholder="Correo Electrónico" id="email" name="email">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-user-secret icon"></i>
+                <input type="password" placeholder="Password" id="password" name="password">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-user-secret icon"></i>
+                <input type="password" placeholder="Confirmar Password" id="password1" name="password1">
+
+            </div>
+
+            <button type="submit" class="button">Guardar</button>
+            <p class="warnings" id="warnings"></p>    
+        </div>
+    </form>
+    <script src="/js/FuncionesReto1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </body>
+</html>

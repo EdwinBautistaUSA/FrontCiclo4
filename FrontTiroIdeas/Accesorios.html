@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <title>Accesorios Tiro de AS</title>
+
+</head>
+<body onload="getAccesories()" class="accesorios">
+
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo right">TIRO DE AS - Modulo de Administración </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="MenuTiroAs.html">Inicio</a></li>
+                <li><a href="Users.html">Usuarios</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<h4>Accesorios</h4>
+
+<div class="row">
+    <div class="col s12"></div>
+    <div class="col s6"></div>
+    <div class="col s3"></div>
+    <div class="col s3"><a class="waves-effect waves-light btn modal-trigger indigo darken-3 btn-large" href="#modal1">
+        <i class="material-icons prefix">create_new_folder</i>Nuevo Registro</a>
+    </div>
+</div>
+
+
+<!-- Modal de Actualizacion -->
+<div id="modalupdate" class="modal" onload="editarAccesory()">
+    <div class="modal-content">
+        <h4>Registro de Accesorios</h4>
+        <div class="divider"></div>
+        <div class="input-field col s6">
+        </div>
+
+        <div class="row" id="accesoriosUpdate">
+            <form class="col s12" type="submit" id="submit-btn">
+                <div class="col s6">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">settings_input_svideo</i>
+                        <input id="referenceUpdate" type="text" class="validate">
+                        <label for="referenceUpdate">Referencia</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">devices_other</i>
+                        <input id="brandUpdate" type="text" class="validate">
+                        <label for="brandUpdate">Marca</label>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">loyalty</i>
+                        <input id="categoryUpdate" type="text" class="validate">
+                        <label for="categoryUpdate">Categoria</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">store</i>
+                        <input id="materialUpdate" type="text" class="validate">
+                        <label for="materialUpdate">Material</label>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">monochrome_photos</i>
+                        <input id="photographyUpdate" type="text" class="validate">
+                        <label for="photographyUpdate">Foto</label>
+                    </div>
+                </div>
+                <div class="col s6">
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">description</i>
+                        <input id="descriptionUpdate" type="text" class="validate">
+                        <label for="descriptionUpdate">Descripción Producto</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">event_available</i>
+                        <input id="availableUpdate" type="text" class="validate">
+                        <label for="availableUpdate">Disponibilidad</label>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">attach_money</i>
+                        <input id="priceUpdate" type="number" class="validate">
+                        <label for="priceUpdate">Precio</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">format_list_numbered</i>
+                        <input id="quantityUpdate" type="number" class="validate">
+                        <label for="quantityUpdate">Cantidad</label>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div>
+            <p class="warnings" id="warnings1"></p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="divider"></div>
+        <input type="submit" value="Guardar" id="validate1" onclick="saveAcc()" class="btn waves-effect waves-light">
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal de Registro -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Registro de Accesorios</h4>
+        <div class="divider"></div>
+        <div class="input-field col s6">
+        </div>
+
+        <div class="row" id="accesorios">
+            <form class="col s12" type="submit" id="submit-btn">
+                <div class="col s6">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">settings_input_svideo</i>
+                        <input id="reference" type="text" class="validate">
+                        <label for="reference">Referencia</label>
+                        </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">devices_other</i>
+                        <input id="brand" type="text" class="validate">
+                        <label for="brand">Marca</label>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">loyalty</i>
+                        <input id="category" type="text" class="validate">
+                        <label for="category">Categoria</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">store</i>
+                        <input id="material" type="text" class="validate">
+                        <label for="material">Material</label>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">monochrome_photos</i>
+                        <input id="photography" type="text" class="validate">
+                        <label for="photography">Foto</label>
+                    </div>
+                </div>
+                <div class="col s6">
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">description</i>
+                        <input id="description" type="text" class="validate">
+                        <label for="description">Descripción Producto</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">event_available</i>
+                        <input id="available" type="text" class="validate">
+                        <label for="available">Disponibilidad</label>
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+                    <div class="input-field col s6">
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">attach_money</i>
+                        <input id="price" type="number" class="validate">
+                        <label for="price">Precio</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">format_list_numbered</i>
+                        <input id="quantity" type="number" class="validate">
+                        <label for="quantity">Cantidad</label>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div>
+            <p class="warnings" id="warnings"></p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="divider"></div>
+        <input type="submit" value="Guardar" id="validate" onclick="saveAcc()" class="btn waves-effect waves-light">
+    </div>
+</div>
+
+<!-- Tabla de Registros -->
+<div class="col s4">
+    <form class="col s12" type="submit" >
+        <div class="col s8 striped highlight centered responsive-table">
+            <table class="highlight centered responsive-table striped ">
+                <thead>
+                <tr>
+                    <th>Referencia</th>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Descripción</th>
+                    <th>Disponibilidad</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Foto</th>
+                </tr>
+                </thead>
+                <tbody id="resAcces">
+                </tbody>
+            </table>
+        </div>
+    </form>
+
+</div>
+    <!--<div class="container">
+        <div class="row">
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light card small">
+                        <img class="activator" src="img/office.jpg">
+                    </div>
+                    <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i
+                        class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light card small">
+                        <img class="activator" src="img/office.jpg">
+                    </div>
+                    <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i
+                        class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+        <div class="section">
+
+        </div>
+        </div>
+    </div>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Script abrir Modal -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/FuncionesReto1.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!--<script>
+    document.getElementById("reference").addEventListener("click", validate);
+    function validate(e) {
+        e.preventDefault();
+        let campo = document.getElementById("reference").value;
+        if (campo.value.length <= 0){
+            M.toast({
+                html:'Diligencia la Referencia'
+            });
+        }else {
+            M.toast({
+                html:'Correcto'
+            });
+        }
+    }
+</script>-->
+</body>
+</html>
